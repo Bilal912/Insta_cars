@@ -1,7 +1,9 @@
 package com.panaceasoft.admotors.ui.chat.adapter;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,11 +30,16 @@ import com.panaceasoft.admotors.databinding.ItemItemHasBeenSoldBinding;
 import com.panaceasoft.admotors.ui.common.DataBoundListAdapter;
 import com.panaceasoft.admotors.utils.Constants;
 import com.panaceasoft.admotors.utils.Objects;
+import com.panaceasoft.admotors.viewmodel.user.UserViewModel;
 import com.panaceasoft.admotors.viewobject.messageHolder.Message;
 
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class ChatListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    private UserViewModel userViewModel;
 
     private final androidx.databinding.DataBindingComponent dataBindingComponent;
     private DataBoundListAdapter.DiffUtilDispatchedInterface diffUtilDispatchedInterface;
@@ -67,7 +74,6 @@ public class ChatListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             imageAdapterBinding.setMessage(message);
             imageAdapterBinding.executePendingBindings();
 
-
             imageAdapterBinding.chatImageView.setOnClickListener(v -> {
                 Message chatMessage = imageAdapterBinding.getMessage();
 
@@ -87,8 +93,14 @@ public class ChatListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public void bind(Message message) {
             textAdapterBinding.setMessage(message);
+
             textAdapterBinding.executePendingBindings();
+
+            dataBindingComponent.getFragmentBindingAdapters().bindProfileImage(textAdapterBinding.senderImageView, otherUserProfileUrl);
+
         }
+
+
 
     }
 
@@ -133,6 +145,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
 
         public void bind(Message message) {
+
             textAdapterBinding.setMessage(message);
 
             textAdapterBinding.profileImageView.setOnClickListener(v -> {
@@ -252,8 +265,6 @@ public class ChatListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
                 callback.onMarkAsSoldButtonClicked(chatMessage);
             });
-
-
 
         }
     }

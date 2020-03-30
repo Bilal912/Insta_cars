@@ -40,6 +40,7 @@ public class UserLoginActivity extends PSAppCompactActivity {
         String CURRENT_LANG_COUNTRY_CODE = preferences.getString(Constants.LANGUAGE_COUNTRY_CODE, Config.DEFAULT_LANGUAGE_COUNTRY_CODE);
 
         super.attachBaseContext(MyContextWrapper.wrap(newBase, CURRENT_LANG_CODE, CURRENT_LANG_COUNTRY_CODE, true));
+
     }
 
     @Override
@@ -69,6 +70,5 @@ public class UserLoginActivity extends PSAppCompactActivity {
     }
 
     //endregion
-
 
 }

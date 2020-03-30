@@ -58,7 +58,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/senderImageView"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="helloDAGSDGDFS" />
+                tools:text="hello" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

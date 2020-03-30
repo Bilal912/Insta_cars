@@ -467,7 +467,6 @@ public class Utils {
 
     public static AppLanguage appLanguage = new AppLanguage();
 
-
     public static int getDrawableInt(Context context, String name) {
         return context.getResources().getIdentifier(name, "drawable", context.getPackageName());
     }

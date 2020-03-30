@@ -3,9 +3,11 @@ package com.panaceasoft.admotors.ui.chat.chat;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,12 +79,16 @@ public class ChatFragment extends PSFragment implements DataBoundListAdapter.Dif
     private AutoClearedValue<Dialog> reviewDialog;
     private AutoClearedValue<ProgressDialog> prgDialog;
     private AutoClearedValue<ItemRatingEntryBinding> itemRatingEntryBinding;
+    String user_image;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         FragmentChatBinding dataBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_chat, container, false, dataBindingComponent);
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        user_image = preferences.getString(Constants.IMAGE,"null");
 
         binding = new AutoClearedValue<>(this, dataBinding);
 
@@ -397,7 +403,7 @@ public class ChatFragment extends PSFragment implements DataBoundListAdapter.Dif
         }
 
 
-        ChatListAdapter chatListAdapter = new ChatListAdapter(dataBindingComponent, this, loginUserId, new ChatListAdapter.clickCallBack() {
+        ChatListAdapter chatListAdapter = new ChatListAdapter(dataBindingComponent, this,loginUserId, new ChatListAdapter.clickCallBack() {
             @Override
             public void onImageClicked(Message message) {
                 if (message.type == Constants.CHAT_TYPE_IMAGE) {

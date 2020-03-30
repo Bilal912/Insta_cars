@@ -153,6 +153,7 @@ public class ProfileFragment extends PSFragment implements DataBoundListAdapter.
 
         //User
         userViewModel.setUserObj(loginUserId);
+
         userViewModel.getUserData().observe(this, new Observer<Resource<User>>() {
             @Override
             public void onChanged(Resource<User> listResource) {
