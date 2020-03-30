@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="message"
+            type="com.panaceasoft.admotors.viewobject.messageHolder.Message" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="6dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/senderImageView"
+                android:layout_width="@dimen/space_40"
+                android:layout_height="@dimen/space_40"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/image_default__image"
+                app:layout_constraintBottom_toBottomOf="@+id/constraintLayout8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/circle_default_image" />
+
+            <TextView
+                android:background="@drawable/chat_sender_bubble"
+                android:id="@+id/messageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="4dp"
+                android:padding="6dp"
+                android:maxEms="10"
+                android:singleLine="false"
+                android:text="@{message.message}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/md_white_1000"
+                android:textSize="@dimen/font_title_size"
+                app:font='@{"normal"}'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/senderImageView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="helloDAGSDGDFS" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/timeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@{message.time}"
+            android:textColor="@color/text__primary_light"
+            android:textSize="@dimen/font_body_s_size"
+            app:font='@{"normal"}'
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout8"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout8" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

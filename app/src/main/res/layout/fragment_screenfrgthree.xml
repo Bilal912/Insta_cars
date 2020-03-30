@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffff"
+    android:padding="10dp"
+    tools:context="screen.screenfrgthree">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:fontFamily="@font/gotham"
+            android:id="@+id/backthree"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Skip"
+            android:textSize="18dp" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/screenone"
+        android:paddingTop="30dp"
+        android:layout_height="330dp"
+        android:layout_gravity="center" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@id/tempy"
+        >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sell Transport For Free"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/gotham"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        android:text="Decide a metting place and sell transport"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="19dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
+
+
+ <!--   <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:textSize="26dp"
+        android:layout_gravity="bottom|end"
+        android:paddingTop="100dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/nextthree"
+        /> -->
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/tempy"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/dot"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Let's Start"
+            android:textAllCaps="false"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="16dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:textColor="#ffff"
+            android:textStyle="bold"
+            android:fontFamily="@font/gotham"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/nextthree"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/botton_bordery"
+            />
+</LinearLayout>
+</RelativeLayout>

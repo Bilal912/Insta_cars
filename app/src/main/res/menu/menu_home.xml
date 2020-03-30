@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_menu"
+        android:icon="@drawable/homeicon"
+        android:title="@string/menu__home" />
+
+    <item
+        android:id="@+id/message_menu"
+        android:icon="@drawable/messageicon"
+        android:title="@string/menu__message" />
+    <item
+        android:id="@+id/me_menu"
+        android:icon="@drawable/sellhome"
+        android:title="Sell" />
+    <item
+        android:id="@+id/interest_menu"
+        android:icon="@drawable/checklist"
+        android:title="@string/menu__interest" />
+
+
+    <item
+        android:id="@+id/search_menu"
+        android:icon="@drawable/baseline_profile_grey_24"
+        android:title="@string/menu__search" />
+
+</menu>
