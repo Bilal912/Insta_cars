@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
@@ -40,6 +41,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class ChatListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private UserViewModel userViewModel;
+    private com.panaceasoft.admotors.viewobject.User user;
 
     private final androidx.databinding.DataBindingComponent dataBindingComponent;
     private DataBoundListAdapter.DiffUtilDispatchedInterface diffUtilDispatchedInterface;
@@ -58,7 +60,6 @@ public class ChatListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.callback = callback;
         this.itemId = itemId;
         this.otherUserProfileUrl = otherUserProfileUrl;
-
     }
 
     public class ImageSenderViewHolder extends RecyclerView.ViewHolder {
@@ -92,15 +93,14 @@ public class ChatListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
 
         public void bind(Message message) {
+
             textAdapterBinding.setMessage(message);
 
             textAdapterBinding.executePendingBindings();
 
-            dataBindingComponent.getFragmentBindingAdapters().bindProfileImage(textAdapterBinding.senderImageView, otherUserProfileUrl);
+            //dataBindingComponent.getFragmentBindingAdapters().bindProfileImage(textAdapterBinding.senderImageView, otherUserProfileUrl);
 
         }
-
-
 
     }
 
@@ -129,7 +129,6 @@ public class ChatListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             });
 
             dataBindingComponent.getFragmentBindingAdapters().bindCircleImage(imageAdapterBinding.profileImageView, otherUserProfileUrl);
-
 
             imageAdapterBinding.executePendingBindings();
         }

@@ -5,12 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="user"
+            type="com.panaceasoft.admotors.viewobject.User" />
         <variable
             name="message"
             type="com.panaceasoft.admotors.viewobject.messageHolder.Message" />
     </data>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,12 +24,12 @@
             android:layout_marginTop="6dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="6dp"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                app:imageProfileUrl="@{user.userProfilePhoto}"
                 android:id="@+id/senderImageView"
                 android:layout_width="@dimen/space_40"
                 android:layout_height="@dimen/space_40"
@@ -36,7 +37,8 @@
                 android:contentDescription="@string/image_default__image"
                 app:layout_constraintBottom_toBottomOf="@+id/constraintLayout8"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/circle_default_image" />
+                android:src="@drawable/default_profile"
+                />
 
             <TextView
                 android:background="@drawable/chat_sender_bubble"
@@ -59,7 +61,6 @@
                 app:layout_constraintEnd_toStartOf="@id/senderImageView"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="hello" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

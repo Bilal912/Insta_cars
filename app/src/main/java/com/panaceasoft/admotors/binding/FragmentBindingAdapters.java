@@ -62,6 +62,7 @@ public class FragmentBindingAdapters {
         }
     }
 
+
     @BindingAdapter("bindFullImage")
     public void bindFullImage(ImageView imageView, String imageUrl) {
 
