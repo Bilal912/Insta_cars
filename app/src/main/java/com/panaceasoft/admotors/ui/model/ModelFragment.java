@@ -272,8 +272,5 @@ public class ModelFragment extends PSFragment implements DataBoundListAdapter.Di
             }
         }
     }
-
     //endregion
-
 }
-

@@ -318,21 +318,22 @@ public class MainActivity extends PSAppCompactActivity {
                 case R.id.home_menu:
                     //layout_scrollFlags
                     Utils.addToolbarScrollFlag(binding.toolbar);
-                    binding.floatingActionButton.setVisibility(View.VISIBLE);
+//                    binding.floatingActionButton.setVisibility(View.VISIBLE);
                     navigationController.navigateToHome(MainActivity.this, false, selectedLocationId, selectedLocationName,false);
                     setToolbarText(binding.toolbar, Constants.EMPTY_STRING);
+
 
                     break;
                 case R.id.message_menu:
                     Utils.addToolbarScrollFlag(binding.toolbar);
-                    binding.floatingActionButton.setVisibility(View.VISIBLE);
+//                    binding.floatingActionButton.setVisibility(View.VISIBLE);
                     Utils.navigateOnUserVerificationAndMessageFragment(pref,user,navigationController,this);
 
                     break;
 
                 case R.id.interest_menu:
                     Utils.addToolbarScrollFlag(binding.toolbar);
-                    binding.floatingActionButton.setVisibility(View.VISIBLE);
+//                    binding.floatingActionButton.setVisibility(View.VISIBLE);
                     navigationController.navigateToInterest(MainActivity.this);
                     setToolbarText(binding.toolbar, getString(R.string.menu__interest));
 
@@ -340,22 +341,22 @@ public class MainActivity extends PSAppCompactActivity {
 
                 case R.id.search_menu:
                     Utils.addToolbarScrollFlag(binding.toolbar);
-                    binding.floatingActionButton.setVisibility(View.VISIBLE);
+//                    binding.floatingActionButton.setVisibility(View.VISIBLE);
                     navigationController.navigateToFilter(MainActivity.this);
                     setToolbarText(binding.toolbar, getString(R.string.menu__search));
 
                     break;
 
-//                case R.id.me_menu:
-//                    Utils.addToolbarScrollFlag(binding.toolbar);
-//                    binding.addItemButton.setVisibility(View.GONE);
-//
+                case R.id.me_menu:
+
+                    Utils.addToolbarScrollFlag(binding.toolbar);
+                    //binding.addItemButton.setVisibility(View.GONE);
 //                    Utils.navigateOnUserVerificationFragment(pref,user,navigationController,this);
-//
-//                    break;
+                    navigationController.navigateToItemEntryActivity(MainActivity.this, Constants.ADD_NEW_ITEM, locationId, locationName);
+
+                    break;
 
                 default:
-
 
                     break;
             }
@@ -365,6 +366,7 @@ public class MainActivity extends PSAppCompactActivity {
 
 //        binding.floatingActionButton.setTypeface(Utils.getTypeFace(this, Utils.Fonts.ROBOTO));
         binding.floatingActionButton.setOnClickListener(v -> {
+
 
             Utils.navigateOnUserVerificationActivity(userIdToVerify, loginUserId, psDialogMsg, this, navigationController, () -> {
                 try {
@@ -584,7 +586,7 @@ public class MainActivity extends PSAppCompactActivity {
 
     private void showBottomNavigation() {
         binding.bottomNavigationView.setVisibility(View.VISIBLE);
-        binding.floatingActionButton.setVisibility(View.VISIBLE);
+ //       binding.floatingActionButton.setVisibility(View.VISIBLE);
 
         Utils.addToolbarScrollFlag(binding.toolbar);
 

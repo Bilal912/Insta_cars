@@ -81,5 +81,4 @@ public class screenfrgone extends Fragment {
         }
     }
 
-
 }
